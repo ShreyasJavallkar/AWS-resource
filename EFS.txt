@@ -1,0 +1,19 @@
+## Amazon EFS
+sudo yum -y update
+mkdir ~/efs-mount-point 
+
+# Install EFS utils
+sudo yum install -y amazon-efs-utils
+
+# Mount using the EFS mount helper
+sudo mount -t efs -o tls fs-009748c679889efaa.efs.ap-south-1.amazonaws.com:/ ~/efs-mount-point
+
+# Get into the common dir
+cd efs-mount-point/
+
+# Make a dir in common dir
+sudo mkdir shreyas
+
+# Unmount the EFS file system
+sudo umount ~/efs-mount-point
+
